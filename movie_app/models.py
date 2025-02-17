@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 
 
 class Director(models.Model):
@@ -7,8 +8,7 @@ class Director(models.Model):
     def __str__(self):
         return self.name
     
-    def movies_count(self):
-        return self.movies.count()
+    
 
 class Movie(models.Model):
     title = models.CharField(max_length=100)
@@ -19,12 +19,9 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
     
-    def rating(self):
-        reviews = self.reviews.all()
-        if reviews.exists():
-            total_stars = sum([review.stars for review in reviews])
-            return total_stars / len(reviews)
-        return 0
+
+
+    
     
 STARS = (
     (1,'*'),
