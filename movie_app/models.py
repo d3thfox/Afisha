@@ -1,13 +1,11 @@
 from django.db import models
 from django.db.models import Avg
 
-
 class Director(models.Model):
     name = models.CharField(max_length=100,null=True, blank=True)
 
     def __str__(self):
         return self.name
-    
     
 
 class Movie(models.Model):
@@ -18,10 +16,7 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.title
-    
 
-
-    
     
 STARS = (
     (1,'*'),

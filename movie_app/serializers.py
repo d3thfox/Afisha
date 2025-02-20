@@ -44,16 +44,3 @@ class ReviewValidSerializer(serializers.Serializer):
     movie_id = serializers.IntegerField()
     stars = serializers.IntegerField(min_value=1, max_value=5)
     
-
-
-
-    
-           
-         
-             
-         
-             
-             
-        
-
-    
